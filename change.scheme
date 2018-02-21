@@ -1,0 +1,16 @@
+(define (count-change amount)
+	(cc amount 5))
+(define (cc amount kindsOfCoins)
+	(cond ((= amount 0) 1)
+	      ((or (< amount 0) (= kindsOfCoins 0)) 0)
+	      (else (+ (cc amount
+			(- kindsOfCoins 1))
+		       (cc (- amount
+				(firstDen kindsOfCoins))
+			   kindsOfCoins)))))
+(define (firstDen kindsOfCoins)
+	(cond ((= kindsOfCoins 1) 1)
+	      ((= kindsOfCoins 2) 5)
+	      ((= kindsOfCoins 3) 10)
+	      ((= kindsOfCoins 4) 25)
+	      ((= kindsOfCoins 5) 50)))
