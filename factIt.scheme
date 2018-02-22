@@ -1,0 +1,9 @@
+(define (fac n)
+	(facIt 1 1 n))
+
+(define (facIt res cou mc)
+	(if (> cou mc)
+		res
+	    (facIt (* res cou)
+		  (+ cou 1)
+		  mc)))
