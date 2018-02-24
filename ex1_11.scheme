@@ -1,0 +1,9 @@
+(define (f n)
+	(if (< n 3) n
+	    (+ (f (- n 1)) (f (- n 2)) (f (- n 3)))))
+
+(define (f n)
+	(fi 2 1 0 n))
+(define (fi a b c count)
+	(if (= count 0) c
+		(fi (+ a b c) a b (- count 1))))
