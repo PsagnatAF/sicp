@@ -1,0 +1,4 @@
+(define (pascal row element)
+	(if (or (= row 1) (= element 1)) 1
+		(+ (pascal row (- element 1))
+		   (pascal (- row 1) element))))
